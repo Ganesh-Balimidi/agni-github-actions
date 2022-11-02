@@ -14,7 +14,7 @@ inputs:
   PROJECT_ID:
     required: true
     description: 'Google Cloud Project ID'
-  SA_CREDENTIALS:
+  GOOGLE_APPLICATION_CREDENTIALS:
     required: true
     description: 'Google Cloud Service Account Credentials'
 
