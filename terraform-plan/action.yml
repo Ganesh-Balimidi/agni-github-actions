@@ -11,6 +11,12 @@ inputs:
   WORKING_DIR:
     required: true
     description: 'Which terraform root folder to work with'
+  PROJECT_ID:
+    required: true
+    description: 'Google Cloud Project ID'
+  SA_CREDENTIALS:
+    required: true
+    description: 'Google Cloud Service Account Credentials'
 
 runs:
   using: "composite"
@@ -19,7 +25,9 @@ runs:
     - shell: bash
       id: init
       working-directory: ${{inputs.WORKING_DIR}}
-      run: terraform init -backend-config=./env/${{inputs.CLIENT}}-${{inputs.ENVIRONMENT}}/backend.tfvars
+      run: terraform init -backend-config="token=${{inputs.SA_CREDENTIALS}}" -backend-config="organization={{INPUTS.PROJECT_ID}}"
+
+#       run: terraform init -backend-config=./env/${{inputs.CLIENT}}-${{inputs.ENVIRONMENT}}/backend.tfvars
 
     - shell: bash
       id: validate
