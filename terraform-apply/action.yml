@@ -11,12 +11,6 @@ inputs:
   WORKING_DIR:
     required: true
     description: 'Which terraform root folder to work with'
-  PROJECT_ID:
-    required: true
-    description: 'Google Cloud Project ID'
-  GOOGLE_APPLICATION_CREDENTIALS:
-    required: true
-    description: 'Google Cloud Service Account Credentials'
 
 runs:
   using: "composite"
