@@ -12,14 +12,15 @@ inputs:
     required: true
     description: 'Which terraform root folder to work with'
   PROJECT_ID:
-    required: false
+    required: true
     description: 'Google Cloud Project ID'
   GOOGLE_APPLICATION_CREDENTIALS:
-    required: false
+    required: true
     description: 'Google Cloud Service Account Credentials'
 
 runs:
   using: "composite"
+  runs-on: ubuntu-latest
   steps:
     - uses: actions/checkout@v3
     
