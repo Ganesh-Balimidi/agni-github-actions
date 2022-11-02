@@ -12,7 +12,7 @@ inputs:
     required: true
     description: 'Which terraform root folder to work with'
   PROJECT_ID:
-    required: true
+    required: false
     description: 'Google Cloud Project ID'
   GOOGLE_APPLICATION_CREDENTIALS:
     required: false
