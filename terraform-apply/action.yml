@@ -20,8 +20,8 @@ runs:
     - shell: bash
       id: init
       working-directory: ${{inputs.WORKING_DIR}}
-      run: terraform init
-#       run: terraform init -backend-config=./env/${{inputs.CLIENT}}-${{inputs.ENVIRONMENT}}/backend.tfvars -upgrade
+#       run: terraform init
+      run: terraform init -backend-config=./env/${{inputs.CLIENT}}-${{inputs.ENVIRONMENT}}/backend.tfvars -upgrade
 
     - shell: bash
       id: validate
